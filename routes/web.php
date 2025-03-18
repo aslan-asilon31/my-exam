@@ -24,6 +24,7 @@ Route::put('post/{id}/unpublish', [PostController::class, 'unpublish'])->name('p
 
 // Route untuk mengelola postingan
 // Route::middleware(['auth'])->group(function () {
+
     Route::get('posts', [PostController::class, 'index'])->name('post.index'); // Menampilkan daftar postingan
     Route::get('posts/create', [PostController::class, 'create'])->name('post.create'); // Menampilkan form untuk membuat postingan
     Route::post('posts', [PostController::class, 'store'])->name('post.store'); // Menyimpan postingan baru
@@ -32,10 +33,16 @@ Route::put('post/{id}/unpublish', [PostController::class, 'unpublish'])->name('p
     Route::delete('posts/{id}', [PostController::class, 'destroy'])->name('post.destroy'); // Menghapus postingan
     Route::put('posts/{id}/publish', [PostController::class, 'publish'])->name('post.publish'); // Mempublikasikan postingan
     Route::put('posts/{id}/unpublish', [PostController::class, 'unpublish'])->name('post.unpublish'); // Menghapus publikasi postingan
+
+    Route::get('/asesmen-list', \App\Livewire\Asesmen\AsesmenList::class)->name('asesmen-list');
+    Route::get('/confirmation-start/{id}', \App\Livewire\Asesmen\ConfirmationStart::class)->name('confirmation-start');
+    Route::get('/asesmen/{id}', \App\Livewire\Asesmen\Asesmen::class)->name('asesmen');
+    Route::get('/confirmation-finish', \App\Livewire\Asesmen\ConfirmationFinish::class)->name('confirmation-finish');
+
 // });
 
 
-Route::get('/confirmation-start', \App\Livewire\ConfirmationStart::class)->name('confirmation-start');
-Route::get('/exam', \App\Livewire\Exam::class)->name('exam');
-Route::get('/confirmation-finish', \App\Livewire\ConfirmationFinish::class)->name('confirmation-finish');
+// Route::get('/confirmation-start', \App\Livewire\ConfirmationStart::class)->name('confirmation-start');
+// Route::get('/exam', \App\Livewire\Exam::class)->name('exam');
+// Route::get('/confirmation-finish', \App\Livewire\ConfirmationFinish::class)->name('confirmation-finish');
 

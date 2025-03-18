@@ -30,7 +30,6 @@
                     <div class="bg-white shadow-md rounded-lg p-4">
                         <h3 class="text-lg font-semibold">Soal {{ $question['no'] }}:</h3>
                         <p class="text-gray-700 mb-2">{{ $question['ask'] }}</p>
-                     
                     </div>
                 @endforeach
             </div>

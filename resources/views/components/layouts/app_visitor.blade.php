@@ -9,19 +9,16 @@
     @livewireStyles
     
 </head>
-<body class="bg-gray-100 w-full mx-auto ">
+<body class="bg-gradient-to-r from-orange-700 to-orange-900 p-10">
     <x-toast />
 
-    {{ $slot }}
+    <livewire:partials.header />
 
 
-    <script>
-        document.addEventListener('livewire:load', function () {
-            Livewire.on('start-timer', () => {
-                alert('mulai start time')
-            })
-        });
-    </script>
+    <div class="flex items-center justify-center ">
+        {{ $slot }}
+    </div>
+
 
     @livewireScripts
 </body>

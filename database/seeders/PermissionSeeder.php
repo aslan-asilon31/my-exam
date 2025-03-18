@@ -26,7 +26,7 @@ class PermissionSeeder extends Seeder
                 Permission::create(['name' => 'delete posts']);
                 Permission::create(['name' => 'publish posts']);
                 Permission::create(['name' => 'unpublish posts']);
-        
+
                 //create roles and assign existing permissions
                 $visitorRole = Role::create(['name' => 'visitor']);
                 $visitorRole->givePermissionTo('view posts');
