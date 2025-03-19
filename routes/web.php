@@ -34,10 +34,10 @@ Route::put('post/{id}/unpublish', [PostController::class, 'unpublish'])->name('p
     Route::put('posts/{id}/publish', [PostController::class, 'publish'])->name('post.publish'); // Mempublikasikan postingan
     Route::put('posts/{id}/unpublish', [PostController::class, 'unpublish'])->name('post.unpublish'); // Menghapus publikasi postingan
 
-    Route::get('/asesmen-list', \App\Livewire\Asesmen\AsesmenList::class)->name('asesmen-list');
-    Route::get('/confirmation-start/{id}', \App\Livewire\Asesmen\ConfirmationStart::class)->name('confirmation-start');
-    Route::get('/asesmen/{id}', \App\Livewire\Asesmen\Asesmen::class)->name('asesmen');
-    Route::get('/confirmation-finish', \App\Livewire\Asesmen\ConfirmationFinish::class)->name('confirmation-finish');
+    Route::get('/daftar-asesmen', \App\Livewire\Asesmen\DaftarAsesmen::class)->name('daftar-asesmen');
+    Route::get('/konfirmasi-mulai/{id}', \App\Livewire\Asesmen\KonfirmasiMulai::class)->name('konfirmasi-mulai');
+    Route::get('/soal-asesmen/{id}', \App\Livewire\Asesmen\SoalAsesmen::class)->name('soal-asesmen');
+    Route::get('/konfirmasi-selesai', \App\Livewire\Asesmen\KonfirmasiSelesai::class)->name('konfirmasi-selesai');
 
 // });
 

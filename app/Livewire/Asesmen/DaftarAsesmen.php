@@ -10,22 +10,13 @@ use App\Models\Asesmen;
 
 
 
-class AsesmenList extends Component
+class DaftarAsesmen extends Component
 {
     use Toast;
 
     public string $title = 'Assesment List '; 
-    public $currentQuestionIndex = 0;
-    public $questions = [];
     public $asesmens = [];
-    public $answers = [];
-    public $examList = false;
-    public $examQuestion = false;
-    public $examStarted = false;
-    public $examFinished = false;
-    public $examTimer = 3600; // 60 minutes in seconds
-    public $questionTimer = 10; // 10 seconds per question
-    public $questionTimers = [];
+    public $asesmen_id;
 
 
     #[\Livewire\Attributes\Locked]
@@ -34,27 +25,32 @@ class AsesmenList extends Component
 
     public function startTest()
     {
-        // Pindah ke komponen Test
         return redirect()->route('Test');
         $this->dispatch('test-started'); 
     }
 
     public function mount()
     {
-
         $this->initialize();
     }
 
     public function initialize()
     {
-
         $this->asesmens = Asesmen::where('apa_aktif', true)->get();
+    }
+
+    public function passId($id)
+    {
+        $this->id = $id;
+        $this->asesmens = Asesmen::where('apa_aktif', true)->get();
+        $this->dispatch('asesment-id', asesmenId: $this->id);
+
     }
 
     
     public function render()
     {
-        return view('livewire.asesmen.asesmen-list')
+        return view('livewire.asesmen.halaman-list-asesmen')
         ->layout('components.layouts.app_visitor')
         ->title($this->title);
     }

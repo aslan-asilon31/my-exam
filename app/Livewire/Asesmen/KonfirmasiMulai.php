@@ -4,8 +4,10 @@ namespace App\Livewire\Asesmen;
 
 use Livewire\Component;
 use App\Models\Asesmen;
+use Livewire\Attributes\On;
 
-class ConfirmationStart extends Component
+
+class KonfirmasiMulai extends Component
 {
 
     public string $title = 'Confirmation Start '; 
@@ -19,19 +21,23 @@ class ConfirmationStart extends Component
     public $assesmentQuestion = false;
     public $assesmentStarted = false;
     public $assesmentFinished = false;
-    public $assesmentTimer;
+    public $asesmenDurasi;
     public $questionTimer;
     public $questionTimers = [];
 
     public function mount()
     {
 
-        $this->initialize();
+        $this->initialize($this->id);
     }
 
-    public function initialize()
+    #[On('asesment-durasi-id')] 
+    public function initialize($asesmenId)
     {
+        $this->id = $asesmenId;
         $this->asesmen = Asesmen::where('id', $this->id)->firstOrFail()->toArray();
+        $this->asesmenDurasi = $this->id;
+
         // $this->questionTimers = array_column($this->questions, 'timer');
         // $this->asesmens = Asesmen::where('apa_aktif', true)->get();
     }
@@ -40,7 +46,7 @@ class ConfirmationStart extends Component
     public function render()
     {
 
-        return view('livewire.asesmen.confirmation-start')
+        return view('livewire.asesmen.konfirmasi-mulai')
         ->layout('components.layouts.app_visitor')
         ->title($this->title);
     }

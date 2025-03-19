@@ -8,10 +8,10 @@
         <p class="text-center text-gray-700 text-xs">Klik tombol selesai untuk menyelesaikan asesmen ini</p> <!-- Centered text -->
 
         <div class="flex items-center justify-center mt-1 text-center gap-2">
-            <a href="asesmen-list" class="text-xs md:text-sm bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+            <a href="daftar-asesmen" class="text-xs md:text-sm bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                 Kembali ke daftar asesmen
             </a>
-            <a href="asesmen-list" class="text-xs md:text-sm bg-orange-900 hover:bg-orange-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+            <a href="daftar-asesmen" class="text-xs md:text-sm bg-orange-900 hover:bg-orange-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                 Selesai
             </a>
         </div>

@@ -9,7 +9,7 @@ use Mary\Traits\Toast;
 use App\Models\Pertanyaan;
 
 
-class Asesmen extends Component
+class SoalAsesmen extends Component
 {
     use Toast;
     public string $title = 'Ujian '; 
@@ -142,7 +142,7 @@ class Asesmen extends Component
 
     public function render()
     {
-        return view('livewire.asesmen.asesmen')
+        return view('livewire.asesmen.halaman-soal-asesmen')
         ->layout('components.layouts.app_visitor')
         ->title($this->title);
     }
